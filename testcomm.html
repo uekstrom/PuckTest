@@ -19,10 +19,15 @@
     var path = document.getElementsByTagName('path')[0];
     // Make sure your mouse cursor turns into a hand when over it, and gray it out
     path.style="cursor:pointer;fill:#BBB";
-
+audioObj = new Audio("https://freewavesamples.com/files/Dog-Bark.wav");
     // Called when we get a line of data - updates the light color
     function onLine(v) {
       console.log("Received: "+JSON.stringify(parseInt(v)));
+       var acc2 = parseInt(v);
+     if (acc2 != null and acc2 > 2909141248)
+     {
+      audioObj.play();
+     }
       //path.style.fill="rgb("+Math.round(v*255)+",0,0)";
     }
 
