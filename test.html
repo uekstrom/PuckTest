@@ -14,6 +14,7 @@
   </svg>
   <script src="https://www.puck-js.com/puck.js"></script>
   <script type="text/javascript">
+      audioObj = new Audio("https://freewavesamples.com/files/Dog-Bark.wav");
     // Get the actual curve inside the SVG. You could make differemt
     // parts of a more complex SVG do different things...
     var path = document.getElementsByTagName('path')[0];
@@ -34,13 +35,9 @@
         state=0;
       path.style.fill=states[state].color;
       Puck.write(states[state].command);
+     audioObj.play();
     });
    
-   audioObj = new Audio("https://freewavesamples.com/files/Dog-Bark.wav");
-   audioObj.addEventListener("canplaythrough", event => {
-  /* the audio is now playable; play it if permissions allow */
-    audioObj.play();
-});
   </script>
 </body>
 </html>
