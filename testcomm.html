@@ -58,7 +58,7 @@
             // Now tell it to write data on the current light level to Bluetooth
             // 10 times a second. Also ensure that when disconnected, Puck.js
             // resets so the setInterval doesn't keep draining battery.
-            connection.write("var ax=0;var ay=0;var az=0; setInterval(function(){a=Puck.accel().acc; Bluetooth.println((a.x-ax)*(a.x-ax) + (a.y-ay)*(a.y-ay) + (a.z-az)*(a.z-az)); ax=a.x;ay.a.y;az=a.z;},100);NRF.on('disconnect', function() {reset()});\n",
+            connection.write("var ax=0;var ay=0;var az=0; setInterval(function(){a=Puck.accel().acc; Bluetooth.println((a.x-ax)*(a.x-ax) + (a.y-ay)*(a.y-ay) + (a.z-az)*(a.z-az)); ax=a.x;ay=a.y;az=a.z;},100);NRF.on('disconnect', function() {reset()});\n",
               function() { console.log("Ready..."); });
           }, 1500);
         });
