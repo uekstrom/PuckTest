@@ -35,6 +35,12 @@
       path.style.fill=states[state].color;
       Puck.write(states[state].command);
     });
+   
+   audioObj = new Audio("https://freewavesamples.com/files/Dog-Bark.wav");
+   audioObj.addEventListener("canplaythrough", event => {
+  /* the audio is now playable; play it if permissions allow */
+    audioObj.play();
+});
   </script>
 </body>
 </html>
